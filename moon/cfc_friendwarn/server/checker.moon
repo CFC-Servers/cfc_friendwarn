@@ -32,7 +32,6 @@ export FriendChecker = {
 
         for friend in *friends
             steamId = SteamIDFrom64 friend.steamid
-            since = friend.friends_since
 
             ban = ULib.bans[steamId]
             continue unless ban
