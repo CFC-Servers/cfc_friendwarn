@@ -9,6 +9,7 @@ SteamCheckQueue\addLookup lookup
 
 hook.Add "CFC_SteamLookup_SuccessfulPlayerData", "HandlePlayerFriends", (stepName, ply, data) ->
     return unless stepName == name
+    return unless data.friendslist
 
     friends = data.friendslist.friends
     FriendChecker\check ply, friends
