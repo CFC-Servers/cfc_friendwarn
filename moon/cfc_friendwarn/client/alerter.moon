@@ -1,21 +1,21 @@
 import Count from table
 
-WHITE = Color 220, 220, 220
-GREY = Color 180, 180, 180
-YELLOW = Color 180, 180, 0
-RED = Color 180, 0, 0
+WHITE = Color 250, 250, 250
+GREY = Color 175, 175, 175
+YELLOW = Color 240, 240, 0
+RED = Color 240, 0, 0
 
 fmtBanTime = (ban) -> ULib.secondsToStringTime ban.unban - ban.time
-fmtBanRemaining = (ban) -> ULib.secondsToStringTime os.time! - ban.unban
+fmtBanRemaining = (ban) -> ULib.secondsToStringTime ban.unban - os.time!
 
 printBanToConsole = (steamId, ban) ->
     banTime = fmtBanTime ban
     remaining = fmtBanRemaining ban
 
-    MsgC WHITE, "['", YELLOW, ban.name, WHITE, "' ", GREY, "(", RED, steamId, GREY, ")", WHITE, "]\n"
+    MsgC WHITE, "'", YELLOW, ban.name, WHITE, "' ", GREY, "(", RED, steamId, GREY, ")", WHITE, ":", "\n"
     MsgC WHITE, "  Reason: ", YELLOW, ban.reason, "\n"
     MsgC WHITE, "  Length: ", YELLOW, banTime, "\n"
-    MsgC WHITE, "  Remaining: ", YELLOW, remaining, "\n"
+    MsgC WHITE, "  Remaining: ", YELLOW, remaining, "\n\n"
 
 net.Receive "CFC_FriendWarn_BannedFriends", ->
     ply = net.ReadEntity!
