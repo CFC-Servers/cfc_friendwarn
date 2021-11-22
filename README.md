@@ -1,4 +1,4 @@
-# cfc_friendwarn
+# CFC FriendWarn
 Warns staff when a player joins who is friends with a banned player.
 
 ![NVIDIA_Share_5kHJQ9Pssn](https://user-images.githubusercontent.com/7936439/142822592-d5862ea2-d98d-4371-a8ab-25f5772a123c.png)
