@@ -1,4 +1,4 @@
-require "cfc_steamlookup"
+require "steamlookup"
 
 name = "PlayerFriends"
 route = "ISteamUser/GetFriendList/v1"
